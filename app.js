@@ -1,12 +1,18 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const firebaseinit = require('./firebase/init/firebaseinit');
+const fbdbhelper = require('./firebase/database/fbdbhelper');
+
+firebaseinit();
 
 app.get('/', (req, res) => {
-			  res.send('Hello World!')
-				})
+	fbdbhelper("123", "key",]"title");
 
-app.use('/api',require('./routes/api'))
+    res.send('Hello World!')
+})
+
+// app.use('/api',require('./routes/api'))
 
 app.listen(3000, function () {
-		  console.log('Example app listening on port 3000!')
-			})
+    console.log('Example app listening on port 3000!')
+})
